@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeamName — CISC 322 Group Project</title>
+<meta name="description" content="TeamName CISC 322 Group Project site: resources, deliverables, and updates.">
+<style>
+:root{
+  --bg:#f6f7fb; --panel:#ffffff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
+  --accent:#2563eb; --accent-2:#7c3aed; --radius:16px; --shadow:0 8px 20px rgba(17,24,39,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0b1220; --panel:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --border:#1f2a44;
+         --accent:#60a5fa; --accent-2:#a78bfa; --shadow:0 8px 24px rgba(0,0,0,.4); }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Noto Sans,"Helvetica Neue","Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:linear-gradient(180deg,var(--bg) 0%,#ffffff 100%) fixed;
+  line-height:1.6
+}
+.wrap{max-width:1000px;margin:0 auto;padding:24px}
+.header{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:saturate(140%) blur(6px);
+  background:color-mix(in srgb,var(--panel) 88%, transparent);
+  border-bottom:1px solid var(--border)
+}
+.nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.nav a{
+  text-decoration:none;color:var(--muted);
+  padding:8px 12px;border:1px solid var(--border);
+  border-radius:999px;transition:all .2s ease
+}
+.nav a:hover,.nav a:focus{
+  color:var(--text);
+  border-color:color-mix(in srgb,var(--accent) 50%, var(--border));
+  box-shadow:0 2px 10px rgba(0,0,0,.06)
+}
+.hero{
+  background:
+    radial-gradient(1200px 300px at 10% -20%,color-mix(in srgb,var(--accent) 14%, transparent) 0%,transparent 60%),
+    radial-gradient(800px 200px at 90% -10%,color-mix(in srgb,var(--accent-2) 16%, transparent) 0%,transparent 60%);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--shadow);margin:16px 0 22px
+}
+.hero h1{margin:0 0 6px;font-size:clamp(1.8rem,2.5vw,2.6rem)}
+.hero p{margin:0;color:var(--muted)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 8px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:color-mix(in srgb,var(--accent) 12%, var(--panel));
+  border:1px solid color-mix(in srgb,var(--accent) 35%, var(--border));
+  color:var(--text);padding:6px 10px;border-radius:999px;font-size:.9rem
+}
+a.inline{color:var(--accent);text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--accent) 40%, transparent)}
+a.inline:hover{text-decoration:underline}
+.table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.table th,.table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}
+.table thead th{font-weight:600;color:var(--muted);background:color-mix(in srgb,var(--panel) 80%, var(--bg))}
+.table tbody tr:hover{background:color-mix(in srgb,var(--panel) 94%, var(--bg))}
+.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.9em;background:color-mix(in srgb,var(--panel) 70%, var(--bg));border:1px solid var(--border);padding:2px 6px;border-radius:6px}
+.footer{color:var(--muted);font-size:.95rem;padding-top:12px}
+.small{font-size:.95rem;color:var(--muted)}
+section{margin:22px 0}
+h2{margin:0 0 10px;font-size:clamp(1.25rem,1.1vw + 1rem,1.6rem)}
+
+/* ▼▼▼ 方案A：成员卡片（可展开） ▼▼▼ */
+.team[hidden]{ display:none; }
+.team{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+.person{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:var(--radius); padding:14px; box-shadow:var(--shadow);
+}
+.person h4{ margin:0 0 6px; }
+.person p{ margin:0; color:var(--muted); }
+.person img{ width:100%; height:140px; object-fit:cover; border-radius:10px; }
+/* ▲▲▲ end ▼▼▼ */
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="wrap">
+      <div class="nav">
+        <strong style="margin-right:auto">TeamName · CISC 322 Group Project</strong>
+        <a href="#resources">Resources</a>
+   
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>Welcome 👋</h1>
+      <p>This is Group 13</p>
+     
+    </div>
+
+    
+    
+
+    <!-- ▼▼▼ About：press to show members ▼▼▼ -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p><strong>Leader:</strong> Name</p>
+        <p><strong>Members:</strong> names....</p>
+        <button id="toggle-team" class="badge" style="margin-top:8px">Show members</button>
+      </div>
+
+      <!-- members list：hide first；put images -->
+      <div id="team" class="team" hidden>
+        <article class="person">
+          <img src="images/member1.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Email: m1@school.com</p>
+        </article>
+        <article class="person">
+          <img src="images/member2.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Email: m2@school.com</p>
+        </article>
+        <article class="person">
+          <img src="images/member1.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Email: m1@school.com</p>
+        </article>        <article class="person">
+          <img src="images/member1.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Focus:Email: m1@school.com</p>
+        </article>        <article class="person">
+          <img src="images/member1.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Email: m1@school.com</p>
+        </article>
+        <article class="person">
+          <img src="images/member1.jpg" alt="Member ">
+          <h4>Member  · Role</h4>
+          <p>Email: m1@school.com</p>
+        </article>
+        <!-- …继续添加 person 卡片 -->
+      </div>
+    </section>
+    <!-- ▲▲▲ end About ▲▲▲ -->
+
+    <footer class="footer">
+      <small>© 2025 TeamName</small>
+    </footer>
+  </main>
+
+  <!-- ▼▼▼ 脚本：点击 About 链接或按钮展开/折叠 ▼▼▼ -->
+  <script>
+    const aboutLink = document.querySelector('a[href="#about"]');
+    const team = document.getElementById('team');
+    const btn = document.getElementById('toggle-team');
+
+    function showTeam(e){
+      if(e) e.preventDefault();
+      if(team.hidden){
+        team.hidden = false;
+        if(btn) btn.textContent = 'Hide members';
+      }
+      document.getElementById('about').scrollIntoView({behavior:'smooth'});
+    }
+    function toggleTeam(){
+      team.hidden = !team.hidden;
+      btn.textContent = team.hidden ? 'Show members' : 'Hide members';
+    }
+
+    if(aboutLink) aboutLink.addEventListener('click', showTeam);
+    if(btn) btn.addEventListener('click', toggleTeam);
+  </script>
+  <!-- ▲▲▲ end script ▲▲▲ -->
+</body>
+</html>
